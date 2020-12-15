@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
+
+@use "constants";
+
+/* Global */
+* {
+  box-sizing: border-box;
+}
+body {
+  color: constants.$standard-color;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  background-color: constants.$standard-background;
+}
+h1 {
+  font-size: 1.7em;
+  font-weight: 700;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h6 {
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: constants.$standard-color;
+}
+ul {
+  list-style: none;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border: solid 1px constants.$background-dark;
+  transition: all 0.3s ease-in;
+}
+.btn:hover,
+.btn:focus {
+  transform: translate(0px, -2px);
+  -webkit-box-shadow: constants.$shadow;
+  -moz-box-shadow: constants.$shadow;
+  box-shadow: constants.$shadow;
+  transition: all 0.3s ease-out;
+}
+form {
+  display: flex;
+}
+form input:first-child {
+  flex: 1 0 80%;
+  background-color: constants.$background-transparent;
+}
+form input:last-child {
+  flex: 1 0 20%;
+  border-left: 0;
+  cursor: pointer;
+  background-color: constants.$background-light;
+  transition: all 0.25s ease;
+}
+#submit:hover {
+  background-color: constants.$background-dark;
+  color: constants.$color-light;
+  transition: all 0.25s ease;
+  -webkit-box-shadow: constants.$shadow;
+  -moz-box-shadow: constants.$shadow;
+  box-shadow: constants.$shadow;
+}
+input {
+  padding: 10px;
+  border: 1px solid constants.$background-dark;
+}
+
+/* Pas alleen de onderstaande regels aan */
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding: constants.$standard-padding;
+  background-color: constants.$background-light;
+  height: 120px;
+  -webkit-box-shadow: constants.$shadow;
+  -moz-box-shadow: constants.$shadow;
+  box-shadow: constants.$shadow;
+
+  &__brand-logo img {
+    width: auto;
+    padding-top: constants.$standard-padding;
+    height: 7.5em;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 1em;
+  
+  &--left {
+    justify-content: flex-start;
+  }
+  &--right {
+    justify-content: flex-end;
+  }
+  &__line {
+  width: 3em;
+  height: 1px;
+  background-color: constants.$background-dark;
+    &--left {
+      margin-right: 1em;
+    }
+    &--right {
+      order: 2;
+      margin-right: 0;
+      margin-left: 1em;
+    }
+  }
+}
+
+/* Hero Section */
+.hero {
+  padding: constants.$standard-padding;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  background: constants.$background-medium;
+
+  &__image img {
+    display: block;
+    height: auto;
+    width: 15.5em;
+  }
+  &__text {
+    @include constants.text-block;
+  }
+}
+
+/* Featured Section */
+.featured {
+  padding: constants.$standard-padding;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__image img {
+    width: 300px;
+  }
+  &__text {
+    max-width: 700px;
+    text-align: center;
+    padding: constants.$standard-padding;
+  }
+  &__text p {
+    @include constants.text-block;
+  }
+}
+
+/* About Section */
+
+.about {
+  background-color: constants.$background-medium;
+  padding: constants.$standard-padding;
+
+  &__wrapper {
+    display: flex;
+  }
+  &__text {
+    @include constants.text-block;
+  }
+  &__text p {
+    text-align: justify;
+    padding-bottom: 1em;
+    line-height: 1.4em;
+  }
+  &__video-wrapper {
+    position: relative;
+    padding-bottom: 33.25%;
+    overflow: hidden;
+    align-self: center;
+    flex: 2 0 55%;
+    margin: 1.4em 0;
+  }
+  &__video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Contact Section */
+.contact {
+  padding: constants.$standard-padding;
+
+  &__wrapper & {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__form-wrapper {
+    padding: constants.$standard-padding;
+  }
+}
+
+.copy-wrapper {
+  padding-left: 20px;
+}
